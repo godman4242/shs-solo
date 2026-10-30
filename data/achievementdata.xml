@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="utf-8"?>
+<achievementdata>
+
+	<achievement>
+		<id>0</id>
+		<img>1</img>
+		<name>8000</name>
+		<desc>8080</desc>
+		<stat>60000</stat>
+		<val>1</val>
+	</achievement>
+
+	<achievement>
+		<id>1</id>
+		<img>2</img>
+		<name>8001</name>
+		<desc>8081</desc>
+		<stat>60000</stat>
+		<val>50</val>
+	</achievement>
+
+	<achievement>
+		<id>2</id>
+		<img>3</img>
+		<name>8002</name>
+		<desc>8082</desc>
+		<stat>60000</stat>
+		<val>200</val>
+	</achievement>
+
+	<achievement>
+		<id>3</id>
+		<img>1</img>
+		<name>8003</name>
+		<desc>8083</desc>
+		<stat>60017</stat>
+		<val>100</val>
+	</achievement>
+
+	<achievement>
+		<id>4</id>
+		<img>2</img>
+		<name>8004</name>
+		<desc>8084</desc>
+		<stat>60017</stat>
+		<val>1000</val>
+	</achievement>
+
+	<achievement>
+		<id>5</id>
+		<img>3</img>
+		<name>8005</name>
+		<desc>8085</desc>
+		<stat>60017</stat>
+		<val>10000</val>
+	</achievement>
+
+	<achievement>
+		<id>6</id>
+		<img>1</img>
+		<name>8006</name>
+		<desc>8086</desc>
+		<stat>60016</stat>
+		<val>100</val>
+	</achievement>
+
+	<achievement>
+		<id>7</id>
+		<img>2</img>
+		<name>8007</name>
+		<desc>8087</desc>
+		<stat>60016</stat>
+		<val>500</val>
+	</achievement>
+
+	<achievement>
+		<id>8</id>
+		<img>3</img>
+		<name>8008</name>
+		<desc>8088</desc>
+		<stat>60016</stat>
+		<val>1000</val>
+	</achievement>
+
+	<achievement>
+		<id>9</id>
+		<img>1</img>
+		<name>8010</name>
+		<desc>8090</desc>
+		<stat>60002</stat>
+		<val>5</val>
+	</achievement>
+
+	<achievement>
+		<id>10</id>
+		<img>2</img>
+		<name>8011</name>
+		<desc>8091</desc>
+		<stat>60002</stat>
+		<val>10</val>
+	</achievement>
+
+	<achievement>
+		<id>11</id>
+		<img>3</img>
+		<name>8012</name>
+		<desc>8092</desc>
+		<stat>60002</stat>
+		<val>20</val>
+	</achievement>
+
+	<achievement>
+		<id>12</id>
+		<img>3</img>
+		<name>8013</name>
+		<desc>8093</desc>
+		<stat>60012</stat>
+		<val>50</val>
+	</achievement>
+
+	<achievement>
+		<id>13</id>
+		<img>3</img>
+		<name>8014</name>
+		<desc>8094</desc>
+		<stat>60014</stat>
+		<val>50</val>
+	</achievement>
+
+	<achievement>
+		<id>14</id>
+		<img>3</img>
+		<name>8015</name>
+		<desc>8095</desc>
+		<stat>60013</stat>
+		<val>50</val>
+	</achievement>
+
+	<achievement>
+		<id>15</id>
+		<img>3</img>
+		<name>8016</name>
+		<desc>8096</desc>
+		<stat>60003</stat>
+		<val>50</val>
+	</achievement>
+
+	<achievement>
+		<id>16</id>
+		<img>3</img>
+		<name>8017</name>
+		<desc>8097</desc>
+		<stat>60007</stat>
+		<val>50</val>
+	</achievement>
+
+	<achievement>
+		<id>17</id>
+		<img>3</img>
+		<name>8018</name>
+		<desc>8098</desc>
+		<stat>60020</stat>
+		<val>10</val>
+	</achievement>
+
+	<achievement>
+		<id>18</id>
+		<img>3</img>
+		<name>8019</name>
+		<desc>8099</desc>
+		<stat>60005</stat>
+		<val>50</val>
+	</achievement>
+
+	<achievement>
+		<id>19</id>
+		<img>1</img>
+		<name>8020</name>
+		<desc>8100</desc>
+		<stat>60004</stat>
+		<val>1</val>
+	</achievement>
+
+	<achievement>
+		<id>20</id>
+		<img>1</img>
+		<name>8021</name>
+		<desc>8101</desc>
+		<stat>60006</stat>
+		<val>1000</val>
+	</achievement>
+
+	<achievement>
+		<id>21</id>
+		<img>2</img>
+		<name>8022</name>
+		<desc>8102</desc>
+		<stat>60006</stat>
+		<val>10000</val>
+	</achievement>
+
+	<achievement>
+		<id>22</id>
+		<img>3</img>
+		<name>8023</name>
+		<desc>8103</desc>
+		<stat>60006</stat>
+		<val>100000</val>
+	</achievement>
+
+	<achievement>
+		<id>23</id>
+		<img>3</img>
+		<name>8024</name>
+		<desc>8104</desc>
+		<stat>60009</stat>
+		<val>10000</val>
+	</achievement>
+
+	<achievement>
+		<id>24</id>
+		<img>1</img>
+		<name>8025</name>
+		<desc>8105</desc>
+		<stat>60010</stat>
+		<val>10</val>
+	</achievement>
+
+	<achievement>
+		<id>25</id>
+		<img>2</img>
+		<name>8026</name>
+		<desc>8106</desc>
+		<stat>60010</stat>
+		<val>50</val>
+	</achievement>
+
+	<achievement>
+		<id>26</id>
+		<img>3</img>
+		<name>8027</name>
+		<desc>8107</desc>
+		<stat>60010</stat>
+		<val>100</val>
+	</achievement>
+
+	<achievement>
+		<id>27</id>
+		<img>1</img>
+		<name>8028</name>
+		<desc>8108</desc>
+		<stat>60011</stat>
+		<val>10</val>
+	</achievement>
+
+	<achievement>
+		<id>28</id>
+		<img>2</img>
+		<name>8029</name>
+		<desc>8109</desc>
+		<stat>60011</stat>
+		<val>50</val>
+	</achievement>
+
+	<achievement>
+		<id>29</id>
+		<img>3</img>
+		<name>8030</name>
+		<desc>8110</desc>
+		<stat>60011</stat>
+		<val>100</val>
+	</achievement>
+
+	<achievement>
+		<id>30</id>
+		<img>1</img>
+		<name>8031</name>
+		<desc>8111</desc>
+		<stat>60021</stat>
+		<val>1</val>
+	</achievement>
+
+	<achievement>
+		<id>31</id>
+		<img>2</img>
+		<name>8032</name>
+		<desc>8112</desc>
+		<stat>60021</stat>
+		<val>10</val>
+	</achievement>
+
+	<achievement>
+		<id>32</id>
+		<img>3</img>
+		<name>8033</name>
+		<desc>8113</desc>
+		<stat>60021</stat>
+		<val>50</val>
+	</achievement>
+
+	<achievement>
+		<id>33</id>
+		<img>1</img>
+		<name>8034</name>
+		<desc>8114</desc>
+		<stat>60015</stat>
+		<val>1</val>
+	</achievement>
+
+	<achievement>
+		<id>34</id>
+		<img>2</img>
+		<name>8035</name>
+		<desc>8115</desc>
+		<stat>60015</stat>
+		<val>5</val>
+	</achievement>
+
+	<achievement>
+		<id>35</id>
+		<img>3</img>
+		<name>8036</name>
+		<desc>8116</desc>
+		<stat>60015</stat>
+		<val>10</val>
+	</achievement>
+
+	<achievement>
+		<id>36</id>
+		<img>3</img>
+		<name>8045</name>
+		<desc>8125</desc>
+		<stat>1008</stat>
+		<val>5</val>
+	</achievement>
+
+	<achievement>
+		<id>37</id>
+		<img>3</img>
+		<name>8046</name>
+		<desc>8126</desc>
+		<stat>1009</stat>
+		<val>5</val>
+	</achievement>
+
+	<achievement>
+		<id>38</id>
+		<img>3</img>
+		<name>8047</name>
+		<desc>8127</desc>
+		<stat>1011</stat>
+		<val>5</val>
+	</achievement>
+
+	<achievement>
+		<id>39</id>
+		<img>3</img>
+		<name>8048</name>
+		<desc>8128</desc>
+		<stat>1020</stat>
+		<val>5</val>
+	</achievement>
+
+	<achievement>
+		<id>40</id>
+		<img>3</img>
+		<name>8049</name>
+		<desc>8129</desc>
+		<stat>1021</stat>
+		<val>5</val>
+	</achievement>
+
+	<achievement>
+		<id>41</id>
+		<img>3</img>
+		<name>8050</name>
+		<desc>8130</desc>
+		<stat>1022</stat>
+		<val>5</val>
+	</achievement>
+
+	<achievement>
+		<id>42</id>
+		<img>3</img>
+		<name>8051</name>
+		<desc>8131</desc>
+		<stat>1000</stat>
+		<val>10</val>
+	</achievement>
+
+	<achievement>
+		<id>43</id>
+		<img>3</img>
+		<name>8052</name>
+		<desc>8132</desc>
+		<stat>1001</stat>
+		<val>10</val>
+	</achievement>
+
+	<achievement>
+		<id>44</id>
+		<img>3</img>
+		<name>8053</name>
+		<desc>8133</desc>
+		<stat>1002</stat>
+		<val>10</val>
+	</achievement>
+
+	<achievement>
+		<id>45</id>
+		<img>3</img>
+		<name>8054</name>
+		<desc>8134</desc>
+		<stat>60022</stat>
+		<val>10</val>
+	</achievement>
+
+	<achievement>
+		<id>46</id>
+		<img>3</img>
+		<name>8055</name>
+		<desc>8135</desc>
+		<stat>60023</stat>
+		<val>9</val>
+	</achievement>
+
+	<achievement>
+		<id>47</id>
+		<img>3</img>
+		<name>8009</name>
+		<desc>8089</desc>
+		<stat>60019</stat>
+		<val>1</val>
+	</achievement>
+
+	<achievement>
+		<id>48</id>
+		<img>1</img>
+		<name>8041</name>
+		<desc>8121</desc>
+		<stat>25</stat>
+		<val>1</val>
+	</achievement>
+
+	<achievement>
+		<id>49</id>
+		<img>2</img>
+		<name>8042</name>
+		<desc>8122</desc>
+		<stat>25</stat>
+		<val>2</val>
+	</achievement>
+
+	<achievement>
+		<id>50</id>
+		<img>3</img>
+		<name>8043</name>
+		<desc>8123</desc>
+		<stat>25</stat>
+		<val>5</val>
+	</achievement>
+
+	<achievement>
+		<id>51</id>
+		<img>4</img>
+		<name>8044</name>
+		<desc>8124</desc>
+		<stat>25</stat>
+		<val>9</val>
+	</achievement>
+
+	<achievement>
+		<id>52</id>
+		<img>1</img>
+		<name>8037</name>
+		<desc>8117</desc>
+		<val>1</val>
+		<condition><has><id>21</id><qty>0</qty><comp>not</comp></has></condition>
+	</achievement>
+
+	<achievement>
+		<id>53</id>
+		<img>2</img>
+		<name>8038</name>
+		<desc>8118</desc>
+		<stat>60001</stat>
+		<val>5</val>
+	</achievement>
+
+	<achievement>
+		<id>54</id>
+		<img>3</img>
+		<name>8039</name>
+		<desc>8119</desc>
+		<stat>60001</stat>
+		<val>9</val>
+	</achievement>
+
+	<achievement>
+		<id>55</id>
+		<img>4</img>
+		<name>8040</name>
+		<desc>8120</desc>
+		<stat>60001</stat>
+		<val>10</val>
+	</achievement>
+
+	<achievement>
+		<id>56</id>
+		<img>1</img>
+		<name>8056</name>
+		<desc>8136</desc>
+		<stat>60018</stat>
+		<val>100</val>
+	</achievement>
+
+	<achievement>
+		<id>57</id>
+		<img>2</img>
+		<name>8057</name>
+		<desc>8137</desc>
+		<stat>60018</stat>
+		<val>200</val>
+	</achievement>
+
+	<achievement>
+		<id>58</id>
+		<img>3</img>
+		<name>8058</name>
+		<desc>8138</desc>
+		<stat>60018</stat>
+		<val>340</val>
+	</achievement>
+
+	<achievement>
+		<id>59</id>
+		<img>3</img>
+		<name>8059</name>
+		<desc>8139</desc>
+		<stat>60024</stat>
+		<val>5000</val>
+	</achievement>
+
+	<achievement>
+		<id>60</id>
+		<img>3</img>
+		<name>8060</name>
+		<desc>8140</desc>
+		<stat>60025</stat>
+		<val>1</val>
+	</achievement>
+
+</achievementdata>

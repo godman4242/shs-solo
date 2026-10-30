@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<premiumdata>
+<default>
+<item>2208</item>
+<item>2209</item>
+<item>2212</item>
+<item>2215</item>
+<item>2213</item>
+<item>2100</item>
+<item>2101</item>
+<item>2102</item>
+<item>2125</item>
+<item>2126</item>
+<item>2127</item>
+<item>2128</item>
+<item>2129</item>
+<item>2200</item>
+<item>2203</item>
+<item>2207</item>
+ </default>
+
+<special>
+<!--
+<item>2171</item>
+<item>13036</item>
+<item>13037</item>
+<item>13038</item>
+<item>13039</item>
+<item>13040</item>
+<item>13041</item>
+<item>13042</item>
+-->
+</special>
+
+<rotation>
+<!-- Assassin outfit -->
+<set>
+<item>2130</item>
+<item>7034</item>
+<item>4065</item>
+<item>5008</item>
+<item>11036</item>
+<item>12018</item>
+</set>
+<!-- Dark Assassin outfit -->
+<set>
+<item>2131</item>
+<item>7035</item>
+<item>4068</item>
+<item>5008</item>
+<item>11036</item>
+<item>12018</item>
+</set>
+<!-- Santa outfit -->
+<set>
+<item>2133</item>
+<item>7067</item>
+<item>9025</item>
+<item>4069</item>
+<item>11037</item>
+<item>13016</item>
+</set>
+<!-- Ichigo outfit -->
+<set>
+<item>2132</item>
+<item>6023</item>
+<item>9030</item>
+<item>4063</item>
+<item>11035</item>
+<item>12019</item>
+<item>13014</item>
+</set>
+<!-- Zaraki outfit -->
+<set>
+<item>2135</item>
+<item>6024</item>
+<item>9032</item>
+<item>4066</item>
+<item>11035</item>
+<item>12019</item>
+<item>13017</item>
+</set>
+<!-- Byakuya outfit -->
+<set>
+<item>2136</item>
+<item>6025</item>
+<item>4067</item>
+<item>11035</item>
+<item>12019</item>
+<item>13021</item>
+</set>
+<!-- Hitsugaya outfit -->
+<set>
+<item>2137</item>
+<item>6026</item>
+<item>4066</item>
+<item>11035</item>
+<item>12019</item>
+<item>13020</item>
+</set>
+<!-- Mayuri outfit -->
+<set>
+<item>2138</item>
+<item>7080</item>
+<item>5010</item>
+<item>4073</item>
+<item>11035</item>
+<item>12019</item>
+<item>13018</item>
+</set>
+<!-- Komamura outfit -->
+<set>
+<item>2139</item>
+<item>7039</item>
+<item>4074</item>
+<item>5011</item>
+<item>11035</item>
+<item>12019</item>
+<item>13019</item>
+</set>
+<!-- Finn outfit -->
+<set>
+<item>2146</item>
+<item>7041</item>
+<item>4080</item>
+<item>11042</item>
+<item>12023</item>
+<item>13026</item>
+</set>
+<!-- Sasuke Taka outfit -->
+<set>
+<item>2161</item>
+<item>6043</item>
+<item>4098</item>
+<item>11055</item>
+<item>12036</item>
+<item>13043</item>
+</set>
+<!-- Obito outfit -->
+<set>
+<item>2154</item>
+<item>7047</item>
+<item>4092</item>
+<item>5018</item>
+<item>11050</item>
+<item>12032</item>
+<item>13032</item>
+</set>
+<!-- Madara outfit -->
+<set>
+<item>2155</item>
+<item>6039</item>
+<item>4094</item>
+<item>5019</item>
+<item>11051</item>
+<item>12033</item>
+<item>13033</item>
+</set>
+<!-- Itachi Akatsuki outfit -->
+<set>
+<item>2158</item>
+<item>6041</item>
+<item>9045</item>
+<item>4091</item>
+<item>11049</item>
+<item>12031</item>
+</set>
+<!-- Kakashi outfit -->
+<set>
+<item>2151</item>
+<item>6035</item>
+<item>9043</item>
+<item>4088</item>
+<item>5017</item>
+<item>11046</item>
+<item>12039</item>
+<item>13037</item>
+</set>
+<!-- Itachi Old outfit -->
+<set>
+<item>2160</item>
+<item>6041</item>
+<item>9045</item>
+<item>4097</item>
+<item>11054</item>
+<item>12035</item>
+</set>
+<!-- Senju outfit -->
+<set>
+<item>2156</item>
+<item>6040</item>
+<item>9045</item>
+<item>4095</item>
+<item>11052</item>
+<item>12034</item>
+<item>13034</item>
+</set>
+<!-- Tobirama outfit -->
+<set>
+<item>2157</item>
+<item>6026</item>
+<item>7081</item>
+<item>4096</item>
+<item>11053</item>
+<item>12030</item>
+<item>13035</item>
+</set>
+<!-- Minato outfit -->
+<set>
+<item>2152</item>
+<item>6036</item>
+<item>9049</item>
+<item>4089</item>
+<item>11047</item>
+<item>12041</item>
+<item>13031</item>
+</set>
+<!-- Sasuke Hebi outfit -->
+<set>
+<item>2162</item>
+<item>6043</item>
+<item>4099</item>
+<item>5020</item>
+<item>11056</item>
+<item>12037</item>
+<item>13043</item>
+</set>
+<!-- Gai outfit -->
+<set>
+<item>2153</item>
+<item>6037</item>
+<item>4090</item>
+<item>11048</item>
+<item>12029</item>
+</set>
+<!-- Kisame outfit -->
+<set>
+<item>2159</item>
+<item>6042</item>
+<item>7082</item>
+<item>4091</item>
+<item>11049</item>
+<item>12031</item>
+<item>13036</item>
+</set>
+<!-- Mist Swords -->
+<set>
+<item>2171</item>
+<item>13036</item>
+<item>13037</item>
+<item>13038</item>
+<item>13039</item>
+<item>13040</item>
+<item>13041</item>
+<item>13042</item>
+</set>
+</rotation>
+</premiumdata>
