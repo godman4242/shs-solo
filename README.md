@@ -1,151 +1,58 @@
-# Straw Hat Samurai Duels — Local Solo Build
+# Straw Hat Samurai: Duels — Local Solo Build
 
-A playable offline build of *Straw Hat Samurai Duels* (v0.682), reconstructed
-from the game's own decompiled source and the surviving CDN assets.
+A playable offline copy of *Straw Hat Samurai: Duels* (v0.682), rebuilt from the original game files and a small local emulator.
 
-## Play it
+## Play it (any OS)
 
+You only need **Git** and **Python 3**.
+
+**macOS / Linux:**
 ```bash
 git clone https://github.com/godman4242/shs-solo.git
 cd shs-solo
 ./play.sh
 ```
 
-Auto-logs in as **Guest** and starts into the overworld.
-
-Browser version: `python3 solo_server.py` then open
-**http://playerio.localhost:8765/** — the host must contain the word
-`playerio` or the game's own site-lock check rejects it.
-
-**Full step-by-step guide: [USER_GUIDE.md](<USER_GUIDE.md>)** — setup, controls,
-what to expect on screen, and troubleshooting.
-
-## What is real vs. what is dead (verified 2026-10-30)
-
-| Component | Status |
-|---|---|
-| Game code (954 ActionScript classes) | ✅ recovered — decompiled from the real SWF |
-| Game assets (`res/*.swf`, `data/*.xml`, `lang/*.xml`) | ✅ **mirrored locally** (16 MB) — no CDN needed at runtime |
-| `strawhatsamuraiduels.com` PHP backend | ❌ **NXDOMAIN** — dead |
-| PlayerIO RPC backend (`r.playerio.com`) | ❌ **HTTP 500** — dead |
-| `whipflash.com` (premium payments) | ❌ HTTP 502 — dead, payments only |
-| `cdn.playerio.com` GameFS | ✅ HTTP 200 — still serving |
-
-**Conclusion:** the game is *not* deleted. The code and nearly all the content
-survive. What is gone is the *multiplayer server*. So this build is **solo
-only** — PvP cannot work without a PlayerIO backend.
-
-## How it works
-
-### 1. Assets mirrored locally
-`solo_server.py` serves the SWF, the 5 resource libraries, the data XMLs and
-the language pack from `public/`-style local paths.
-
-### 2. The hardcoded PHP URL is patched
-The SWF hardcodes its backend base:
-```
-http://www.strawhatsamuraiduels.com/server/     (43 bytes, dead)
-```
-It is byte-patched to:
-```
-http://playerio.localhost:8765/solo/server/      (also exactly 43 bytes)
-```
-`playerio` must stay in the replacement — the game's own anti-piracy gate
-`GameEngine.checkSiteLock()` only accepts URLs containing `playerio`,
-`strawhatsamuraiduels.com` or `explosivebarrel.net`. `*.localhost` resolves to
-127.0.0.1 on macOS, so no `sudo` and no `/etc/hosts` edit is needed.
-
-### 3. Source patches (JPEXS `-replace`)
-
-All patches live in `patches/` as decompiled `.as` files.
-
-| File | Patch | Why |
-|---|---|---|
-| `StatsManager.as` | `useCirrus = false` | Cirrus was a 2003-era RTMFP P2P socket to `rtmfp://218.99.12.19/shs3/`. `NetworkManager.connected` reads a dead PlayerIO connection, so `loginComplete` never called `serverResponse(0)` and login hung forever. |
-| `StatsManager.as` | `server = "http://playerio.localhost:8765/solo/server/"` | Repoint the backend. |
-| `QueryManagerBase.as` | `autoLogin()` → guest session, `offlineMode = true` | Skips the login round-trip; `offlineMode` also makes the game load `data/*.xml` locally. |
-| `QueryManagerBase.as` | `loadCharCookieData()` seeds `STAT_LOCATION=8382465`, `STAT_LOCATION_ROOM=0` | Without a saved SharedObject the game returned early with location `0` and the world never loaded. Node 8382465 is the starting town (Kasuta Forest). |
-| `QueryManagerPIO.as` | `autoLogin()` override → guest session | The base-class patch was bypassed by the subclass override. |
-| `QueryManagerPIO.as` | `getPayVaultCoins()` returns 0 when the vault is null | The premium-currency backend is dead; this was throwing every frame. |
-| `GameEngine.as` | `initTitleScreen()`: create `titleMCS` **before** `new TitleUI()` | Ordering bug: `TitleUI`'s constructor triggers auto-login → `resetTitleMCS()` → dereferences `titleMCS`, which did not exist yet → Error #1009. |
-| `GameEngine.as` | `initTitleScreen()`: `MCSCharacter.initAnimationData()` if `animList == null` | `animList` is normally only built during battle setup, so `startAnim()` threw. |
-| `GameEngine.as` | `resetTitleMCS()` null-guard | Belt and braces. |
-| `GameEngine.as` | `initBattleMode()`: create `OverworldHUD` if null | The HUD is normally created by `NetworkManager` when the P2P session connects. |
-| `GameEngine.as` | `initOverworld()`: create `Overworld.map` | Same — `Overworld.map` was only assigned by the dead network path; `Overworld.update()` dereferences it every frame. |
-| `GameEngine.as` | guard `OverworldMap.init()` | `mapdata.xml` on the live CDN is empty (65 bytes), so `QuestEngine.getMapSquareData()` returns null. The minimap overlay is optional. |
-| `LoginForm.as` | offline `serverResponse(0)` → `switchToReady()` | Offline mode normally jumps to Character Create, whose form assets are missing in this build. |
-| `TitleUI.as` | `switchToReady()` auto-calls `startgame()` after 1.5 s | Removes the need to click START GAME. |
-
-### 4. The local PHP emulator
-`solo_server.py` answers `login_internal.php` with the exact contract the game
-parses (`QueryManagerBase.loginComplete` reads the response as **URL variables**,
-not JSON):
-
-```
-status=0 & chars=<name>,<level> & id=1 & motd=... & magicnum=0
-& username=Guest & verified=1 & playerrow=<116 comma-separated fields>
-```
-
-`status=0` is the success branch → `serverResponse(0)` → character select →
-START GAME → overworld.
-
-## Verification (2026-10-30)
-
-```
-frame errors : 0
-AVM2 errors  : 0
-boot chain   : offline load user data complete → load cookie data
-               → startExploreMode() → startAdventureMode()
-stage        : 11 display objects, hud=true
-screen       : "KASUTA FOREST", "ACTION POINTS", "EXPERIENCE POINTS",
-               "STORY QUEST: LOOK FOR A MAN", "TERRITORY", "SECTOR(0,3)",
-               "BALANCED STANCE"
-```
-
-The overworld renders with the quest system, HUD, territories and character
-animation all live.
-
-## Known limitations
-
-- **No PvP.** The PlayerIO backend is dead; duels need a live socket server.
-- **No overworld minimap.** `mapdata.xml` is empty on the CDN and no archived
-  copy was found. Everything else in the world works.
-- **Premium currency / whipflash features** are dead (server gone).
-- The `logonready` main menu *renders* correctly — the auto-start just skips it.
-
-## Rebuilding the patched SWF
-
-```bash
-java -jar ffdec/ffdec.jar -replace build.swf out.swf StatsManager patches/StatsManager.as
-```
-
-Requires JPEXS Flash Decompiler (https://github.com/jindrapetrik/jpexs-decompiler).
-
-## User Guide
-
-## Play it
-
-```bash
+**Windows:**
+```bat
 git clone https://github.com/godman4242/shs-solo.git
 cd shs-solo
-./play.sh          # desktop app (best)
-# or: python3 solo_server.py  →  open http://playerio.localhost:8765/
+play.bat
 ```
 
-**Read [USER_GUIDE.md](<USER_GUIDE.md>) for the full step-by-step guide** — setup,
-controls, what to expect on screen, and troubleshooting.
+Your default browser opens to the game. Click **Play as Guest** — it runs entirely on your machine; nothing phones home.
 
-## Files
+If `playerio.localhost` does not load, add `127.0.0.1 playerio.localhost` to your hosts file once:
+- **macOS/Linux:** `sudo nano /etc/hosts`
+- **Windows:** edit `C:\Windows\System32\drivers\etc\hosts` as Administrator
 
-```
-.
-├── shs3_solo.swf          the patched game (play this)
-├── shs3_decoded.swf       unmodified deobfuscated SWF (input to the patcher)
-├── solo_server.py         local asset server + PHP emulator
-├── index.html             browser build (Ruffle web player)
-├── play.sh                launcher
-├── patches/               the 6 patched .as files
-├── data/  res/  lang/     mirrored game assets
-├── USER_GUIDE.md           step-by-step player guide
-└── ruffle.js + *.wasm     Ruffle web player (optional, for the browser build)
-```
+## What works vs. what does not
+
+| Feature | Status |
+|---|---|
+| Solo overworld, quests, NPCs, shops, skills | ✅ works |
+| Saves (Guest character) | ✅ works locally in `.solo_state.json` |
+| Sound, music, art, UI | ✅ works |
+| PvP / multiplayer | ❌ needs the dead PlayerIO server — not possible today |
+| Premium currency / payments | ❌ the payment server is dead — ignored |
+
+## Project layout
+
+| Path | What it is |
+|---|---|
+| `shs3_solo.swf` | The patched game (byte-repointed to your local machine) |
+| `solo_server.py` | Tiny Python server that pretends to be the dead PHP backend and serves the assets |
+| `play.py` / `play.sh` / `play.bat` | One-click launcher for your OS |
+| `index.html` + `ruffle.js` + `*.wasm` | Browser-based Flash player (Ruffle) — no separate install needed |
+| `res/`, `data/`, `lang/` | Game assets mirrored locally |
+| `patches/` | The exact source changes made to the game to make it run offline |
+
+## Need more detail?
+
+See **[USER_GUIDE.md](<USER_GUIDE.md>)** for setup, controls, what you will see on screen, and troubleshooting.
+
+## Technical preservation notes
+
+The game is **not** open source. This repo preserves the compiled SWF and the surviving assets so the game can still be played after the original servers shut down. The PHP backend (`strawhatsamuraiduels.com`) is NXDOMAIN and the PlayerIO RPC backend returns HTTP 500, so the online features are gone. The local server emulates just enough of the login/data API to make the solo portion of the game work.
+
+For the full patch list, build notes, and asset recovery log, see the files under `docs/` and `patches/`.

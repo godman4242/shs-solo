@@ -16,3 +16,8 @@ __pycache__/
 # Recovery corpus (too large / not part of playable build)
 shs-recovery/
 shs-recovery.tar.gz
+
+# Runtime state
+*.solo_state.json.bak
+__pycache__/
+*.pyc
