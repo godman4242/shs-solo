@@ -6,18 +6,26 @@ from the game's own decompiled source and the surviving CDN assets.
 ## Play it
 
 ```bash
-cd . && ./play.sh
+git clone https://github.com/godman4242/shs-solo.git
+cd shs-solo
+./play.sh
 ```
 
-It auto-logs in as **Guest** and auto-starts into the overworld. No clicking
-needed (synthetic input is unreliable in headless/automated contexts anyway).
+Auto-logs in as **Guest** and starts into the overworld.
+
+Browser version: `python3 solo_server.py` then open
+**http://playerio.localhost:8765/** — the host must contain the word
+`playerio` or the game's own site-lock check rejects it.
+
+**Full step-by-step guide: [USER_GUIDE.md](<USER_GUIDE.md>)** — setup, controls,
+what to expect on screen, and troubleshooting.
 
 ## What is real vs. what is dead (verified 2026-10-30)
 
 | Component | Status |
 |---|---|
 | Game code (954 ActionScript classes) | ✅ recovered — decompiled from the real SWF |
-| Game assets (`res/*.swf`, `data/*.xml`, `lang/*.xml`) | ✅ still live on `cdn.playerio.com` (16 MB) |
+| Game assets (`res/*.swf`, `data/*.xml`, `lang/*.xml`) | ✅ **mirrored locally** (16 MB) — no CDN needed at runtime |
 | `strawhatsamuraiduels.com` PHP backend | ❌ **NXDOMAIN** — dead |
 | PlayerIO RPC backend (`r.playerio.com`) | ❌ **HTTP 500** — dead |
 | `whipflash.com` (premium payments) | ❌ HTTP 502 — dead, payments only |
@@ -115,7 +123,17 @@ Requires JPEXS Flash Decompiler (https://github.com/jindrapetrik/jpexs-decompile
 
 ## User Guide
 
-See [USER_GUIDE.md](<USER_GUIDE.md>) for step-by-step activation + play instructions.
+## Play it
+
+```bash
+git clone https://github.com/godman4242/shs-solo.git
+cd shs-solo
+./play.sh          # desktop app (best)
+# or: python3 solo_server.py  →  open http://playerio.localhost:8765/
+```
+
+**Read [USER_GUIDE.md](<USER_GUIDE.md>) for the full step-by-step guide** — setup,
+controls, what to expect on screen, and troubleshooting.
 
 ## Files
 
