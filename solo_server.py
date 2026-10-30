@@ -166,6 +166,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 
         # --- static ---------------------------------------------------------
         rel = path.lstrip("/")
+        if not rel:
+            rel = "index.html"
         fs = os.path.join(ROOT, rel)
         if os.path.isfile(fs):
             with open(fs, "rb") as fh:
