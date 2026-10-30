@@ -168,6 +168,11 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         rel = path.lstrip("/")
         if not rel:
             rel = "index.html"
+        # GameFS asset route: /r/<gameid>/<path> -> local mirror
+        if rel.startswith("r/"):
+            parts = rel.split("/", 2)
+            if len(parts) == 3:
+                rel = parts[2]
         fs = os.path.join(ROOT, rel)
         if os.path.isfile(fs):
             with open(fs, "rb") as fh:

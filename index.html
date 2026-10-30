@@ -21,25 +21,23 @@
 (function () {
   function boot() {
     var RP = window.RufflePlayer;
-    var mod = RP && RP.sources && RP.sources.local;
-    if (!mod || !mod.createPlayer) {
+    if (!RP) {
       document.getElementById('hint').textContent = 'Ruffle module failed to load.';
       return;
     }
-    var el = mod.createPlayer();
-    el.config = {
+    var ruffle = typeof RP.newest === 'function' ? RP.newest() : RP.sources.local;
+    var player = ruffle.createPlayer();
+    document.getElementById('game').appendChild(player);
+    player.ruffle().load({
+      url: location.origin + '/shs3_solo.swf',
       autoplay: 'on',
       unmuteOverlay: 'hidden',
       allowScriptAccess: true,
       playerId: 'local-solo',
       gameId: 'straw-hat-samurai-duels-5nsekxalfuoiuqdxrmtxw',
-      // The patched SWF points its PHP base at playerio.localhost:8765/solo/server/
-      url: location.origin + '/shs3_solo.swf',
-      autostart: true,
       allowExternalHttp: true,
-    };
-    document.getElementById('game').appendChild(el);
-    window.__game = el;
+    });
+    window.__game = player;
   }
   if (window.RufflePlayer) boot();
   else window.addEventListener('load', boot);
