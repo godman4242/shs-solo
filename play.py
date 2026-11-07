@@ -53,12 +53,12 @@ def main():
     try:
         socket.getaddrinfo(HOST, None)
     except socket.gaierror:
-        print(f"\n⚠️  {HOST} does not resolve on this machine.")
-        print("Add this line to your hosts file and try again:")
+        print(f"\n⚠️  {HOST} does not resolve for this OS. Browsers resolve *.localhost")
+        print("   themselves (RFC 6761), so the game may still load — try it first.")
+        print("If the game cannot connect, add this line to your hosts file:")
         print("  127.0.0.1  playerio.localhost")
         print("macOS/Linux: sudo nano /etc/hosts")
         print("Windows:     run Notepad as Administrator and edit C:\\Windows\\System32\\drivers\\etc\\hosts")
-        return 1
 
     server_script = find_server_script()
     if not os.path.isfile(server_script):

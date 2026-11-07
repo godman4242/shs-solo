@@ -40,7 +40,8 @@ If `playerio.localhost` does not load, add `127.0.0.1 playerio.localhost` to you
 
 | Path | What it is |
 |---|---|
-| `shs3_solo.swf` | The patched game (byte-repointed to your local machine) |
+| `shs3_solo.swf` | The patched game (URL redirect + offline-logic patches — see `patches/`) |
+| `shs3_decoded.swf` | Uncompressed original game data the patched build was made from (study copy — not needed to play) |
 | `solo_server.py` | Tiny Python server that pretends to be the dead PHP backend and serves the assets |
 | `play.py` / `play.sh` / `play.bat` | One-click launcher for your OS |
 | `index.html` + `ruffle.js` + `*.wasm` | Browser-based Flash player (Ruffle) — no separate install needed |

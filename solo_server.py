@@ -250,6 +250,10 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             }), "application/json")
 
         # ---- GENERIC -----------------------------------------------------
+        # Unknown endpoint: keep answering (the client ignores what it does
+        # not parse) but SAY SO on the console. An unmapped hit is a finding,
+        # not silence — Ch 7 of REVIVAL-COURSE.md: never guess blindly.
+        print(f"[solo] unmapped {method} {self.path}", file=sys.stderr)
         return self._send(200, urlencode({"status": "0", "message": "ok"}),
                           "application/x-www-form-urlencoded")
 
