@@ -51,6 +51,13 @@ If `playerio.localhost` does not load, add `127.0.0.1 playerio.localhost` to you
 
 See **[USER_GUIDE.md](<USER_GUIDE.md>)** for setup, controls, what you will see on screen, and troubleshooting.
 
+### How we did it — full course
+
+Want the whole story? **[Reviving a Dead Game](<REVIVAL-COURSE.md>)** is a build-along course on exactly how this rebuild was made — diagnosing the death, decompiling the client, reading the dead server's protocol out of the game's own parsing code, the 43-character byte patch, the two emulators, honest limits, and a reusable 7-step playbook for reviving other dead games.
+
+- **Read on GitHub:** [REVIVAL-COURSE.md](<REVIVAL-COURSE.md>)
+- **Download (PDF, recordings-free):** [REVIVAL-COURSE.pdf](<REVIVAL-COURSE.pdf>)
+
 ## Technical preservation notes
 
 The game is **not** open source. This repo preserves the compiled SWF and the surviving assets so the game can still be played after the original servers shut down. The PHP backend (`strawhatsamuraiduels.com`) is NXDOMAIN and the PlayerIO RPC backend returns HTTP 500, so the online features are gone. The local server emulates just enough of the login/data API to make the solo portion of the game work.
