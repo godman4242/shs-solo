@@ -21,7 +21,7 @@ VERIFIED DEAD (2026-10-30)
   strawhatsamuraiduels.com   -> DNS NXDOMAIN
   r.playerio.com (connect)   -> HTTP 500
   whipflash.com/api.php      -> HTTP 502 (payments only, not on boot path)
-  cdn.playerio.com GameFS    -> HTTP 200  (assets still alive, mirrored locally)
+  cdn.playerio.com GameFS    -> bucket LOCKED (403 AccessDenied 2026-11-11; was HTTP 200 on 2026-10-30). Gameplay needs nothing from it: data is embedded in the SWF or already mirrored locally.
 """
 import http.server
 import json
