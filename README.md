@@ -61,6 +61,6 @@ Want the whole story? **[Reviving a Dead Game](<REVIVAL-COURSE.md>)** is a build
 
 ## Technical preservation notes
 
-The game is **not** open source. This repo preserves the compiled SWF and the surviving assets so the game can still be played after the original servers shut down. The PHP backend (`strawhatsamuraiduels.com`) is NXDOMAIN and the PlayerIO RPC backend returns HTTP 500, so the online features are gone. The local server emulates just enough of the login/data API to make the solo portion of the game work.
+This repo preserves the compiled SWF and the surviving assets so the game can still be played after the original servers shut down. The PHP backend (`strawhatsamuraiduels.com`) is NXDOMAIN and the PlayerIO RPC backend returns HTTP 500, so the online features are gone. The local server emulates just enough of the login/data API to make the solo portion of the game work.
 
 For the full patch list, build notes, and asset recovery log, see the files under `docs/` and `patches/`.
